@@ -11,7 +11,7 @@ from transformers import (
     set_seed,
 )
 import nltk
-from data_generation.prompts import real_estate_chatbot_system_prompt_v4
+from data_generation.prompts import real_estate_chatbot_system_prompt
 import glob
 from peft import LoraConfig
 
@@ -140,7 +140,7 @@ def training_function(script_args, training_args):
         # mistral doesn't support system messages
 
         if 'mistral' not in script_args.model_id.lower():
-            example["messages"].insert(0, {"role": "system", "content": real_estate_chatbot_system_prompt_v4})
+            example["messages"].insert(0, {"role": "system", "content": real_estate_chatbot_system_prompt})
 
         if example['messages'][0]['role'] == 'assistant':
             example['messages'] = example['messages'][1:]
