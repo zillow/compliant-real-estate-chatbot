@@ -1,0 +1,32 @@
+WANDB_MODE=online WANDB_ENTITY=your_wandb_username WANDB_PROJECT=your_wandb_project_name PYTHONPATH=.. python llama3_lora_trainer.py\
+  --train_file path_to_train_file.json\
+  --dev_dir path_to_dev_dir\
+  --output_dir path_to_output_dir\
+  --do_train\
+  --do_eval\
+  --model_id meta-llama/Meta-Llama-3-8B-Instruct\
+  --use_peft\
+  --per_device_train_batch_size 2\
+  --per_device_eval_batch_size 2\
+  --gradient_accumulation_steps 32\
+  --eval_accumulation_steps 8\
+  --num_train_epochs 5\
+  --save_strategy steps\
+  --eval_strategy steps\
+  --save_total_limit 3\
+  --metric_for_best_model "eval_instruction_val_loss"\
+  --save_steps 5\
+  --max_seq_length 2048\
+  --logging_steps 2\
+  --overwrite_output_dir\
+  --report_to wandb\
+  --load_best_model_at_end\
+  --eval_steps 5\
+  --max_new_tokens 1024\
+  --learning_rate 2.0e-4\
+  --lr_scheduler_type cosine\
+  --warmup_ratio 0.1\
+  --bf16\
+  --lora_alpha 256\
+  --lora_r 128\
+  --flash_attention
