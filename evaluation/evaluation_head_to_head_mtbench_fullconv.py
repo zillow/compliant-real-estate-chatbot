@@ -137,6 +137,6 @@ def run(model1_response_file: str, model2_response_file: str, evaluator_prompt_f
 
 if __name__ == '__main__':
     OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
-    OPENAI_API_BASE = "https://zgai-llm-api.int.stage-k8s.zg-aip.net/openai/v1"
+    OPENAI_API_BASE = os.environ.get('OPENAI_API_BASE')
     fire.Fire(run)
 
