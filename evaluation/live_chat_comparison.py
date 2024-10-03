@@ -10,7 +10,6 @@ from langchain_aws import ChatBedrock
 system_prompt = real_estate_chatbot_system_prompt
 
 
-# todo: add streamer to generation
 def run(model_name_or_path_1='Qwen/Qwen1.5-0.5B-Chat', model_name_or_path_2='meta.llama3-8b-instruct-v1:0',
         max_new_tokens=1024,
         temperature=0.7, top_p=0.9, num_return_sequences=1, do_sample=True, num_beams=1, share=False):

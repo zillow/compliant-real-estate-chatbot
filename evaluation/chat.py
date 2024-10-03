@@ -17,10 +17,8 @@ def load_test_llama3_model(model_id):
     return model
 
 
-# system_prompt = real_estate_chatbot_system_prompt
 system_prompt = real_estate_chatbot_system_prompt
 
-#todo: add stremer to generation
 def run(model_name_or_path='Qwen/Qwen1.5-0.5B-Chat', local_test=False, max_new_tokens=512,
         temperature=0.1, top_p=0.9, num_return_sequences=1, do_sample=True, num_beams=1,
         qlora=False, share=False):
