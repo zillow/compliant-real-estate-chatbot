@@ -12,6 +12,7 @@ pip install -r requirements.txt
 ## Reproducing data, models and results
 
 ### generating synthetic data
+
 To generate the data from scratch, you first need to set your OpenAI API key. You can do this by exporting it as follow:
 
 ```bash
@@ -54,3 +55,6 @@ python data_generation/response_generator.py\
     --system_prompt 'non-compliant-response'\
     --save_path data_generation/data/safety.json
 ```
+
+You can then follow the rest of the `data_preparation.ipynb` notebook to postprocess the generated data, including conversion
+to LLM chat format, pruning the dataset using `sentence_bert` transformer, and splitting the data into train, validation and test sets.

@@ -13,3 +13,7 @@ peft==0.13.0
 tqdm==4.66.5
 trl==0.11.1
 utils==1.0.2
+sentence_transformers==3.1.1
+seaborn
+plotly
+kaleido
