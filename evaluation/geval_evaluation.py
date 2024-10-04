@@ -75,7 +75,7 @@ class BleurtMetric(BaseMetric):
         return "BLEURT"
 
 def run(test_data_path: str, evaluation_metrics: List[str], query_col: str = 'query',
-        response_col: str = 'response', model_resp_col: str = 'llama3-8b-0shot',
+        response_col: str = 'model_response', model_resp_col: str = 'llama3-8b-0shot',
         eval_model_name: str = 'gpt-4'):
 
     # set_should_ignore_errors(True)

@@ -8,6 +8,7 @@ langchain_chroma==0.1.4
 langchain_community==0.3.1
 langchain_core==0.3.8
 langchain_openai==0.2.1
+langchain_huggingface==0.1.0
 nltk==3.9.1
 peft==0.13.0
 tqdm==4.66.5
