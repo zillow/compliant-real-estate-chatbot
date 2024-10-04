@@ -9,6 +9,48 @@ them install the required packages by running the following command:
 pip install -r requirements.txt
 ```
 
+## Download the model and play with it
+
+Our model is hosted on huggingface model hub in [this link](https://huggingface.co/zillow/realestateLM_llama3-8b). Request
+to get access and then you can easily load the model and play with it using the following code:
+
+```python
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model_name = "zillow/realestateLM_llama3-8b"  # or use the model name if it's on Hugging Face Hub
+
+model = AutoModelForCausalLM.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+
+messages = [
+    {'role': 'system', 'content': 'You are a helpful real estate chatbot. Your primary goal is to provide accurate, compliant, and useful information to users.'},
+    {'role': 'user', 'content': 'how do zoning laws impact the feasibility of integrating smart grid technology in new residential developments?'}
+]
+
+input_ids = tokenizer.apply_chat_template(messages, add_generation_prompt=True)
+
+input_t = torch.LongTensor([input_ids]).to('cuda')
+output = model.generate(input_t)[:,input_t.shape[1]:]
+resp = tokenizer.batch_decode(output, skip_special_tokens=True)[0]
+print(resp)
+```
+
+You can also use the `evaluation/chat.py` script to load the model and chat with it on gradio:
+
+```bash
+python evaluation/chat.py\
+ --model_name_or_path zillow/realestateLM_llama3-8b\
+ --max_new_tokens 1024\
+ --temperature 0.7
+```
+
+This will open a gradio interface where you can chat with the model:
+
+![Gradio interface](evaluation/statics/gradio.png)
+
+
 ## Reproducing data, models and results
 
 ### generating synthetic data
@@ -83,7 +125,9 @@ OPENAI_API_KEY="your api key here"\
  --evaluation_metrics "[helpfulness_with_ref, helpfulness_without_ref, safety_with_ref, safety_without_ref]"
 ```
 
-Our head-to-head comparison result can be seen in the figure below, you can use the `result_analysis.ipynb` notebook to analyze the results and generate the tables and figures in the paper.
+Our head-to-head comparison result can be seen in the figure below, it illustrates the win rate of each model on the left
+versus the top model with one percent difference threshold for ties. After running the evaluation,
+you can use the `result_analysis.ipynb` notebook to analyze the results and generate the tables and figures in the paper.
 
 ![Head-to-head comparison](evaluation/statics/geval-head2head.png)
 
