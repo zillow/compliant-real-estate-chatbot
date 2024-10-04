@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [compliant-real-estate-chatbot](#compliant-real-estate-chatbot)
+  - [Installing required packages](#installing-required-packages)
+  - [Download the model and play with it](#download-the-model-and-play-with-it)
+  - [Reproducing data, models and results](#reproducing-data-models-and-results)
+    - [generating synthetic data](#generating-synthetic-data)
+    - [Fine-tuning the model](#fine-tuning-the-model)
+    - [Running the evaluations](#running-the-evaluations)
+      - [G-Eval metrics on held-out test set](#g-eval-metrics-on-held-out-test-set)
+      - [Benchmarks and Judge LLM evaluation](#benchmarks-and-judge-llm-evaluation)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # compliant-real-estate-chatbot
 
 ## Installing required packages
