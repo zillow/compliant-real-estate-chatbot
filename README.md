@@ -50,6 +50,12 @@ This will open a gradio interface where you can chat with the model:
 
 ![Gradio interface](evaluation/statics/gradio.png)
 
+## datasets and benchmarks
+
+All of our synthetically generated datasets are hosted on huggingface:
+- [General instructions and dialogs](https://huggingface.co/datasets/zillow/real_estate_v1)
+- [Safety](https://huggingface.co/datasets/zillow/real_estate_v1_safety)
+- [Benchmarks](https://huggingface.co/datasets/zillow/realestate_bench)
 
 ## Reproducing data, models and results
 
