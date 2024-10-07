@@ -5,6 +5,7 @@
 - [compliant-real-estate-chatbot](#compliant-real-estate-chatbot)
   - [Installing required packages](#installing-required-packages)
   - [Download the model and play with it](#download-the-model-and-play-with-it)
+  - [datasets and benchmarks](#datasets-and-benchmarks)
   - [Reproducing data, models and results](#reproducing-data-models-and-results)
     - [generating synthetic data](#generating-synthetic-data)
     - [Fine-tuning the model](#fine-tuning-the-model)
