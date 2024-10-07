@@ -36,9 +36,14 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 model_name = "zillow/realestateLM_llama3-8b"  # or use the model name if it's on Hugging Face Hub
 
-model = AutoModelForCausalLM.from_pretrained(model_name)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
+model = model.to(device)
+model.eval()
 
 messages = [
     {'role': 'system', 'content': 'You are a helpful real estate chatbot. Your primary goal is to provide accurate, compliant, and useful information to users.'},
@@ -47,7 +52,7 @@ messages = [
 
 input_ids = tokenizer.apply_chat_template(messages, add_generation_prompt=True)
 
-input_t = torch.LongTensor([input_ids]).to('cuda')
+input_t = torch.LongTensor([input_ids]).to(device)
 output = model.generate(input_t)[:,input_t.shape[1]:]
 resp = tokenizer.batch_decode(output, skip_special_tokens=True)[0]
 print(resp)
