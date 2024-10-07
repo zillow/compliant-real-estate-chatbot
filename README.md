@@ -35,7 +35,7 @@ to get access and then you can easily load the model and play with it using the 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_name = "zillow/realestateLM_llama3-8b"  # or use the model name if it's on Hugging Face Hub
+model_name = "zillow/realestateLM_llama3-8b"
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
