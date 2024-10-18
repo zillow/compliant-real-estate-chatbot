@@ -16,6 +16,11 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # compliant-real-estate-chatbot
+It is a chatbot specialized in the real estate domain by fine tuning the Llama3 8B model with an emphasis on incorporating behavior to mitigate against discriminatory practices like steering and redlining, which have historically plagued the real estate industry in the United States. 
+
+In the United States, real estate transactions are regulated under the federal Fair Housing Act, which prohibits discrimination in connection with the sale, rental, or financing of a dwelling. Additionally, a number of states and localities have enacted separate fair housing requirements that mirror or expand upon federal law. Under that law, discrimination is prohibited on the basis of: Race, color, national origin, sex (including sexual orientation or gender identity), religion, familial status, and disability. 
+
+More details can be found [here](https://arxiv.org/abs/2410.10860).
 
 ## Installing required packages
 
@@ -176,4 +181,25 @@ OPENAI_API_KEY="your api key here"\
  python evaluation_head_to_head_mtbench_fullconv.py --model1_response_file path_to_model1_respones.json\
  --model2_response_file path_to_model2_responses.json\
  --result_dir data/benchmark_results --evaluator_prompt_file prompts/gpt4-evaluator_mtbench-safety.txt
+```
+
+## Disclaimer
+The fine-tuned model(provided upon request) is highly experimental and an ongoing work in progress and we will be iteratively improving its accuracy. This model is not designed to ensure compliance and should not be used as such. We recognize that users will interpret fair housing and fair lending requirements based on their own understanding and risk appetite, and are responsible for ensuring compliance with all applicable laws and regulations when integrating the model into different use cases.
+
+## Contact Us
+If you are interested in obtaining the training data and/or trained model, kindly contact us at
+fair-housing-guardrail-oss-support@zillowgroup.com. In your message, provide a brief paragraph outlining your intended use case and how you plan to utilize both the model and dataset.
+
+## Citation
+If you use this code in academic work, please consider citing https://arxiv.org/abs/2410.10860
+```
+@misc{madani2024recipebuildingcompliantreal,
+      title={A Recipe For Building a Compliant Real Estate Chatbot}, 
+      author={Navid Madani and Anusha Bagalkotkar and Supriya Anand and Gabriel Arnson and Rohini Srihari and Kenneth Joseph},
+      year={2024},
+      eprint={2410.10860},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.10860}, 
+}
 ```
