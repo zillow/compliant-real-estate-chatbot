@@ -12,6 +12,9 @@
     - [Running the evaluations](#running-the-evaluations)
       - [G-Eval metrics on held-out test set](#g-eval-metrics-on-held-out-test-set)
       - [Benchmarks and Judge LLM evaluation](#benchmarks-and-judge-llm-evaluation)
+  - [Disclaimer](#disclaimer)
+  - [Contact Us](#contact-us)
+  - [Citation](#citation)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
