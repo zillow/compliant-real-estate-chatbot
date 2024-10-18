@@ -187,7 +187,7 @@ OPENAI_API_KEY="your api key here"\
 The fine-tuned model(provided upon request) is highly experimental and an ongoing work in progress and we will be iteratively improving its accuracy. This model is not designed to ensure compliance and should not be used as such. We recognize that users will interpret fair housing and fair lending requirements based on their own understanding and risk appetite, and are responsible for ensuring compliance with all applicable laws and regulations when integrating the model into different use cases.
 
 ## Contact Us
-If you are interested in obtaining the training data and/or trained model, kindly contact us at
+If you are interested in obtaining the benchmarks data and/or trained model, kindly contact us at
 fair-housing-guardrail-oss-support@zillowgroup.com. In your message, provide a brief paragraph outlining your intended use case and how you plan to utilize both the model and dataset.
 
 ## Citation
